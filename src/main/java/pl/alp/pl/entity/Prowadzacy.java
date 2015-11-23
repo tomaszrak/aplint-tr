@@ -10,22 +10,24 @@ public class Prowadzacy {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	private String tytul;
+	
 	private String imie;
 	private String nazwisko;
 	private String telefon;
 	private Integer admin;
+	private String password;
+	
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getTytul() {
-		return tytul;
+	public String getPassword() {
+		return password;
 	}
-	public void setTytul(String tytul) {
-		this.tytul = tytul;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getImie() {
 		return imie;

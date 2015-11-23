@@ -7,7 +7,7 @@
 
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
@@ -20,6 +20,11 @@
 <title><tiles:getAsString name="title"/></title>
 </head>
 <body>
+
+<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx" %>
+<tilesx:useAttribute name="current"/>
+
+
 <div class="container">
 
  <!-- Static navbar -->
@@ -36,8 +41,8 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href='<spring:url value="/"/>'>Home</a></li>
-              <li><a href="#">About</a></li>
+              <li class="${current == 'index' ? 'active' : '' }"><a href='<spring:url value="/"/>'>Home</a></li>
+              <li class="${current == 'users' ? 'active' : '' }"><a href='<spring:url value="/users.html"></spring:url>'>Prowadzacy</a></li>
               <li><a href="#">Contact</a></li>
             
             </ul>
@@ -49,9 +54,9 @@
 
 <tiles:insertAttribute name="body"/>
 <br><br>
-<center>
+
 	<tiles:insertAttribute name="footer"/>
-</center>
+
 </div>
 </body>
 </html>

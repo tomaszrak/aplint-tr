@@ -1,5 +1,6 @@
 package pl.alp.pl.controller;
-
+//fornt controler 
+//wywo³ywanie plików jsp wraz z danymi z bazy danych
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,12 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Controller
 public class indexController {
 
-	@Autowired
-	private ProwadzacyJDBCTemplate prowadzacyJDBCTemplate;
-	
+
 		@RequestMapping("/index")
 		public String index(Model model){
-			model.addAttribute("prowadzacy",prowadzacyJDBCTemplate.listProwadzacy());
 			return "index";
 		}
 }

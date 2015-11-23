@@ -1,13 +1,14 @@
 package template;
-
-
+// zawiera funkcje które mo¿na wywo³aæ dla tabeli prowadz¹cy
+//daje dostêp do bazy danych
 import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import pl.alp.pl.entity.Prowadzacy;
-import pl.alp.pl.service.ProwadzacyDAO;
+//import pl.alp.pl.service.ProwadzacyDAO;
 import mappers.ProwadzacyMapper;
+
 
 public class ProwadzacyJDBCTemplate  {
    private DataSource dataSource;
@@ -18,10 +19,10 @@ public class ProwadzacyJDBCTemplate  {
       this.jdbcTemplateObject = new JdbcTemplate(dataSource);
    }
 
-   public void create(String tytul,String imie,String nazwisko,String telefon, Boolean admin) {
-      String SQL = "insert into Prowadzacy (tytul,imie,nazwisko,telefon,admin) values (?, ?,?,?,?)";
+   public void create(String imie,String nazwisko,String telefon, Boolean admin,String password) {
+      String SQL = "insert into Prowadzacy (imie,nazwisko,telefon,admin,password) values (?, ?,?,?,?)";
       
-      jdbcTemplateObject.update( SQL, tytul,imie,nazwisko,telefon,admin);
+      jdbcTemplateObject.update( SQL,imie,nazwisko,telefon,admin,password);
       System.out.println("Created Record Name = " + imie + " nazwisko = " + nazwisko);
       return;
    }
@@ -39,6 +40,11 @@ public class ProwadzacyJDBCTemplate  {
                                 new ProwadzacyMapper());
       return prod;
    }
+
+public Prowadzacy znajdzid(int id) {
+	Prowadzacy user=jdbcTemplateObject.queryForObject("select * from Prowadzacy where id="+id, new ProwadzacyMapper());
+	return user;
+}
 
 //   public void delete(Integer id){
 //      String SQL = "delete from Prowadzacy where id = ?";
