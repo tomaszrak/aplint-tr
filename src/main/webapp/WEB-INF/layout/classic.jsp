@@ -10,11 +10,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" >
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><tiles:getAsString name="title"/></title>
@@ -43,7 +43,8 @@
             <ul class="nav navbar-nav">
               <li class="${current == 'index' ? 'active' : '' }"><a href='<spring:url value="/"/>'>Home</a></li>
               <li class="${current == 'users' ? 'active' : '' }"><a href='<spring:url value="/users.html"></spring:url>'>Prowadzacy</a></li>
-              <li><a href="#">Contact</a></li>
+              <li class="${current == 'dodajprowadzacego' ? 'active' : '' }"><a href='<spring:url value="/dodajprowadzacego.html"></spring:url>'>Dodaj Prowadzacego</a></li>
+              
             
             </ul>
            
@@ -55,7 +56,7 @@
 <tiles:insertAttribute name="body"/>
 <br><br>
 
-	<tiles:insertAttribute name="footer"/>
+<tiles:insertAttribute name="footer"/>
 
 </div>
 </body>

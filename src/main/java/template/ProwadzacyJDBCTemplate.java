@@ -19,11 +19,11 @@ public class ProwadzacyJDBCTemplate  {
       this.jdbcTemplateObject = new JdbcTemplate(dataSource);
    }
 
-   public void create(String imie,String nazwisko,String telefon, Boolean admin,String password) {
-      String SQL = "insert into Prowadzacy (imie,nazwisko,telefon,admin,password) values (?, ?,?,?,?)";
+   public void create(String imie,String nazwisko,String password) {
+      String SQL = "insert into Prowadzacy (imie,nazwisko,password) values (?,?,?)";
       
-      jdbcTemplateObject.update( SQL,imie,nazwisko,telefon,admin,password);
-      System.out.println("Created Record Name = " + imie + " nazwisko = " + nazwisko);
+      jdbcTemplateObject.update( SQL,imie,nazwisko,password);
+    
       return;
    }
 
