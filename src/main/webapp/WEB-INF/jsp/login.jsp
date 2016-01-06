@@ -40,6 +40,7 @@
 }
     </style>
 
+
 <form class="form-signin" action='/login' method="POST">
 	<h2 class="form-signin-heading">Proszę zalogować się</h2>
 
