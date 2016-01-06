@@ -12,3 +12,32 @@ ${user.nazwisko}<br />
 <h4>
 Numer telefonu: ${user.telefon}
 </h4>
+<table class="table table-bordered table-haver table-striped">
+	<thead>
+	<tr>
+			<th>Rezerwacje:</th>
+			</tr>
+		<tr>
+			<th>Numer sali</th>
+			<th>Data</th>
+			<th>Godzina rozpoczęcia</th>
+			<th>Godzina zkończenia</th>
+			<th>Cel</th>
+		</tr>
+
+	</thead>
+
+	<tbody>
+		<c:forEach items="${rez}" var="rez">
+			<tr>
+				<td>${rez.sala}</td>
+				<td>${rez.data}</td>
+				<td>${rez.dataroz}</td>
+				<td>${rez.datazak}</td>
+				<td>${rez.cel}</td>
+				
+			</tr>
+
+		</c:forEach>
+	</tbody>
+</table>

@@ -19,10 +19,10 @@ public class ProwadzacyJDBCTemplate  {
       this.jdbcTemplateObject = new JdbcTemplate(dataSource);
    }
 
-   public void create(String imie,String nazwisko,String password) {
-      String SQL = "insert into Prowadzacy (imie,nazwisko,password) values (?,?,?)";
+   public void create(String imie,String nazwisko,String password,String login, String telefon) {
+      String SQL = "insert into Prowadzacy (imie,nazwisko,password,login,admin,telefon) values (?,?,?,?,?,?)";
       
-      jdbcTemplateObject.update( SQL,imie,nazwisko,password);
+      jdbcTemplateObject.update( SQL,imie,nazwisko,password,login,"ROLE_USER",telefon);
     
       return;
    }
@@ -45,6 +45,11 @@ public Prowadzacy znajdzid(int id) {
 	Prowadzacy user=jdbcTemplateObject.queryForObject("select * from Prowadzacy where id="+id, new ProwadzacyMapper());
 	return user;
 }
+public Prowadzacy znajdzid(String name) {
+	Prowadzacy user=jdbcTemplateObject.queryForObject("select * from Prowadzacy where login='"+name+"'", new ProwadzacyMapper());
+	return user;
+}
+
 
 //   public void delete(Integer id){
 //      String SQL = "delete from Prowadzacy where id = ?";

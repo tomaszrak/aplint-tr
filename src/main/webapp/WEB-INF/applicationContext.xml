@@ -20,9 +20,13 @@
         <property name="username" value="root"/>
         <property name="password" value="admin"/>
    </bean>
-    <!-- Definition for studentJDBCTemplate bean -->
+    
    <bean id="prowadzacyJDBCTemplate" 
       class="template.ProwadzacyJDBCTemplate">
+      <property name="dataSource"  ref="dataSource" />    
+   </bean>
+     <bean id="rezerwacjeJDBCTemplate" 
+      class="template.RezerwacjeJDBCTemplate">
       <property name="dataSource"  ref="dataSource" />    
    </bean>
 
@@ -48,5 +52,5 @@
 <!-- <property name="dataSource" ref="dataSource"/> -->
 
 <!-- </bean> -->
-	
+<import resource="security.xml"/>
 </beans>

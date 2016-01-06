@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script type="text/javascript" src="calendar.js"></script>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 
@@ -22,6 +22,7 @@
 <body>
 
 <%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx" %>
+
 <tilesx:useAttribute name="current"/>
 
 
@@ -43,9 +44,17 @@
             <ul class="nav navbar-nav">
               <li class="${current == 'index' ? 'active' : '' }"><a href='<spring:url value="/"/>'>Home</a></li>
               <li class="${current == 'users' ? 'active' : '' }"><a href='<spring:url value="/users.html"></spring:url>'>Prowadzacy</a></li>
+              <li class="${current == 'wyszukajrez' ? 'active' : '' }"><a href='<spring:url value="/wyszukajrez.html"></spring:url>'>Zapełnienie sali</a></li>
+              <security:authorize access="hasRole('ROLE_ADMIN')"> 
               <li class="${current == 'dodajprowadzacego' ? 'active' : '' }"><a href='<spring:url value="/dodajprowadzacego.html"></spring:url>'>Dodaj Prowadzacego</a></li>
-              
-            
+                </security:authorize> 
+                <security:authorize access="! isAuthenticated()">   
+              <li class="${current == 'login' ? 'active' : '' }"><a href='<spring:url value="/login.html"></spring:url>'>Zaloguj się</a></li>
+            </security:authorize> 
+            <security:authorize access="isAuthenticated()">  
+           <li class="${current == 'dodajrez' ? 'active' : '' }"><a href='<spring:url value="/dodajrez.html"></spring:url>'>Dodaj rezerwacje</a></li>
+            <li> <a href='<spring:url value="/logout" ></spring:url>'>Wyloguj się</a></li>
+            </security:authorize>
             </ul>
            
           </div><!--/.nav-collapse -->

@@ -15,7 +15,7 @@
 			<tr>
 				<td>
 				<a href="<spring:url value="/users/${prowadzacy.id}.html"/>">
-				${prowadzacy.imie}
+				${prowadzacy.imie} ${prowadzacy.nazwisko}
 				</a>
 				</td>
 			</tr>

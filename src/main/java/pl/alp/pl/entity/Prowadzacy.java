@@ -14,9 +14,16 @@ public class Prowadzacy {
 	private String imie;
 	private String nazwisko;
 	private String telefon;
-	private Integer admin;
+	private String admin;
 	private String password;
+	private String login;
 	
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -47,10 +54,10 @@ public class Prowadzacy {
 	public void setTelefon(String telefon) {
 		this.telefon = telefon;
 	}
-	public Integer isAdmin() {
+	public String isAdmin() {
 		return admin;
 	}
-	public void setAdmin(Integer admin) {
+	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
 }

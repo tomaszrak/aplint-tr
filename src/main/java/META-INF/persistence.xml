@@ -5,6 +5,10 @@
 	<persistence-unit name="aplikacja_web">
 	<provider>org.hibernate.ejb.HibrenatePresistence</provider>
 	<class>pl.alp.pl.entity.Prowadzacy</class>
+	<class>pl.alp.pl.entity.Rezerwacja</class>
+	<class>pl.alp.pl.entity.Rezerwa</class>
+	<class>pl.alp.pl.entity.Sale</class>
+	<class>pl.alp.pl.entity.Rezerwacja2</class>
 	<properties>
 	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
 	<property name="hibernate.hbm2ddl.auto" value="create-update"/>

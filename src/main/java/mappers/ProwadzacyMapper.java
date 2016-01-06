@@ -16,7 +16,7 @@ public class ProwadzacyMapper implements RowMapper<Prowadzacy> {
       prowa.setImie(rs.getString("imie"));
       prowa.setNazwisko(rs.getString("nazwisko"));
       prowa.setTelefon(rs.getString("telefon"));
-      prowa.setAdmin(rs.getInt("admin"));
+      prowa.setAdmin(rs.getString("admin"));
       return prowa;
    }
 }

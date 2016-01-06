@@ -16,7 +16,7 @@
    <definition name="users" extends="common">
     <put-attribute name="title" value="Zarzadzaj prowadzacymi" />
     <put-attribute name="body" value="/WEB-INF/jsp/users.jsp" />
-       <put-attribute name="current" value="users"/>
+    <put-attribute name="current" value="users"/>
   </definition>
   <definition name="prowadzacyszczeg" extends="common">
     <put-attribute name="title" value="Prowadzacy" />
@@ -27,5 +27,26 @@
     <put-attribute name="title" value="Dodaj" />
     <put-attribute name="body" value="/WEB-INF/jsp/dodajprowadzacego.jsp" />
     <put-attribute name="current" value="dodajprowadzacego"/>
+  </definition>
+  
+  <definition name="login" extends="common">
+    <put-attribute name="title" value="Login" />
+    <put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+    <put-attribute name="current" value="login"/>
+  </definition>
+  <definition name="dodajrez" extends="common">
+    <put-attribute name="title" value="Dodajrez" />
+    <put-attribute name="body" value="/WEB-INF/jsp/dodajrez.jsp" />
+    <put-attribute name="current" value="dodajrez"/>
+  </definition>
+  <definition name="rezerwacja" extends="common">
+    <put-attribute name="title" value="Dodajrez" />
+    <put-attribute name="body" value="/WEB-INF/jsp/dodajrez.jsp" />
+    <put-attribute name="current" value="dodajrez"/>
+  </definition>
+  <definition name="wyszukajrez" extends="common">
+    <put-attribute name="title" value="Wyszukiwanie rezerwacji" />
+    <put-attribute name="body" value="/WEB-INF/jsp/wyszukajrez.jsp" />
+    <put-attribute name="current" value="wyszukajrez"/>
   </definition>
 </tiles-definitions>
